@@ -12,10 +12,10 @@
 	console.log(JSON.parse(JSON.stringify(props.listingData)));
 </script>
 
-<div class="w-full flex-col items-center justify-center pr-[2rem] pl-[2rem] text-center">
+<div class="w-full sm:flex-col sm:items-center sm:justify-center pr-[2rem] pl-[2rem] mt-[1.5rem] mb-[1.5rem] md:grid md:grid-cols-2 md:gap-6 xl:flex xl:flex-col text-center">
 	{#each props.listingData.data as card}
 		<div
-			class="mt-[1.5rem] mb-[1rem] inline-flex w-full flex-col items-center shadow-[0_4px_6px_#0000000D]"
+			class="mb-[2rem] md:mb-0 inline-flex w-full flex-col items-center shadow-[0_4px_6px_#0000000D] xl:flex xl:flex-row"
 		>
 			<!-- <div class="mb-[1rem] w-full shadow-[inset_0_0_0_1000px_#D9D9D9]">
 				<svg width="100%" height="80%" viewBox="0 0 100 80">
@@ -23,13 +23,13 @@
 					<line x1="100" y1="0" x2="-56" y2="125" stroke="black" stroke-width=".2" />
 				</svg>
 			</div> -->
-			<div class="mb-[1rem] w-full shadow-[inset_0_0_0_1000px_#D9D9D9]">
+			<div class="mb-[1rem] w-full h-[294.05px] shadow-[inset_0_0_0_1000px_#D9D9D9] xl:w-[600px]">
 				<picture>
 					<source media="(max-width: 1280px)" srcset={card.yoast_head_json.og_image[0].url} />
 							<img class="block h-full w-full xl:max-h-[348.19px]" src={card.yoast_head_json.og_image[0].url} alt="" />
 				</picture>
 			</div>
-			<div class="self-start pl-8">
+			<div class="self-start pl-8 xl:flex xl:flex-row">
 				<div class="w-full">
 					<p class="mb-[1rem] text-left text-[.7rem] font-bold text-[#848C8C80] uppercase">
 						{card.acf.listing_region}
